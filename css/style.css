@@ -13,7 +13,7 @@ a {
 }
 
 a:hover {
-    color: #28a745;
+    color: #FFC107;
     text-decoration: none;
 }
 
@@ -24,28 +24,17 @@ li {
 
 /* Header */
 header {
-    background-color: rgb(146, 76, 76);
+    background-color: #121212;
     margin-bottom: 15px;
 }
 
 .navbar {
-    padding: 15px 0px;
+    padding: 0px;
 }
 
-.card-header {
-    border-radius: 0px !important;
-    border-top-left-radius: .25rem !important;
-    border-top-right-radius: .25rem !important;
-    text-align: center;
-}
-
-.list-group .btn {
-    border-radius: 0px;
-}
-
-.list-group .btn:last-child {
-    border-bottom-left-radius: .25rem;
-    border-bottom-right-radius: .25rem;
+.navbar-brand img {
+    max-width: 100px;
+    max-height: 100px;
 }
 /* Fim Header */
 
@@ -55,7 +44,6 @@ header {
 }
 
 .no-gutters {
-    background-color: rgb(31, 115, 136);
     margin-bottom: 15px;
 }
 
@@ -66,21 +54,55 @@ header {
 
 .card-title {
     margin: 0px;
+    font-weight: bold;
+}
+
+.card-header {
+    border-radius: 0px !important;
+    border-top-left-radius: .25rem !important;
+    border-top-right-radius: .25rem !important;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #FFC107;
+    background-color: #121212;
+}
+
+.list-group .btn {
+    border-radius: 0px;
+    text-transform: uppercase;
+}
+
+.list-group .btn:last-child {
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
 }
 /* Fim Main */
 
 /* Footer */
 footer {
     padding: 15px;
-    background-color: rgb(146, 76, 76);
+    background-color: #121212;
+    color: #FFFFFF;
 }
 
 .footer h3 {
+    color: #FFC107;
     font-size: 18px;
     line-height: 25px;
     text-transform: uppercase;
     letter-spacing: .1em;
     font-weight: bold;
+}
+
+.footer h3:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #FFC107;
+    margin: 6px 0 12px 0;
+    border-radius: 15px;
 }
 
 .footer_copy {
