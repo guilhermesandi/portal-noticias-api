@@ -1,0 +1,68 @@
+/* Estilos Gerais */
+body {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+a {
+    color: inherit;
+}
+
+a:hover {
+    color: #28a745;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+/* Fim Estilos Gerais */
+
+/* Header */
+header {
+    background-color: rgb(146, 76, 76);
+    margin-bottom: 15px;
+}
+
+.card-header {
+    border-radius: 0px !important;
+    border-top-left-radius: .25rem !important;
+    border-top-right-radius: .25rem !important;
+    text-align: center;
+}
+
+.list-group .btn {
+    border-radius: 0px;
+}
+
+.list-group .btn:last-child {
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+/* Fim Header */
+
+/* Main */
+.no-gutters {
+    background-color: rgb(31, 115, 136);
+    margin-bottom: 15px;
+}
+
+.card-body {
+    padding: 0px;
+    padding-left: 15px;
+}
+
+.card-title {
+    margin: 0px;
+}
+/* Fim Main */
+
+/* Footer */
+footer {
+    background-color: rgb(146, 76, 76);
+}
+/* Fim Footer */
