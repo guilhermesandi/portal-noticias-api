@@ -28,6 +28,10 @@ header {
     margin-bottom: 15px;
 }
 
+.navbar {
+    padding: 15px 0px;
+}
+
 .card-header {
     border-radius: 0px !important;
     border-top-left-radius: .25rem !important;
@@ -46,6 +50,10 @@ header {
 /* Fim Header */
 
 /* Main */
+.main .card {
+    border: none;
+}
+
 .no-gutters {
     background-color: rgb(31, 115, 136);
     margin-bottom: 15px;
@@ -63,6 +71,20 @@ header {
 
 /* Footer */
 footer {
+    padding: 15px;
     background-color: rgb(146, 76, 76);
+}
+
+.footer h3 {
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-weight: bold;
+}
+
+.footer_copy {
+    text-align: center;
+    padding-top: 20px;
 }
 /* Fim Footer */
