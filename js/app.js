@@ -1,7 +1,7 @@
 const API_KEY = 'd94451ddf4cf444c85ff907f953c9184';
 
 function exibeNoticias() {
-    let divTela = document.getElementById('tela');
+    let divTela = document.getElementById('tela-noticia');
     let texto = '';
 
     // Montar texto HTML das noticias
@@ -42,12 +42,40 @@ function executaPesquisa() {
 document.getElementById('btnPesquisa').addEventListener('click', executaPesquisa);
 
 function carregaMain() {
+    let divTela = document.getElementById('tela-titulo');
+    let texto = '';
+    divTela.innerHTML = texto;
+
     let xhr = new XMLHttpRequest();
     xhr.onload = exibeNoticias;
-    xhr.open('GET', `http://newsapi.org/v2/top-headlines?country=br&category=business&apiKey=${API_KEY}`);
+    xhr.open('GET', `http://newsapi.org/v2/top-headlines?country=br&apiKey=${API_KEY}`);
     xhr.send();
 }
 
 document.getElementById('logo').addEventListener('click', carregaMain);
 
 onload = carregaMain();
+
+function carregaFonte(botao) {
+    let fonte = botao.value;
+    let nome = botao.innerHTML;
+
+    let divTela = document.getElementById('tela-titulo');
+    let texto = '';
+
+    // Montar título HTML da fonte
+    texto = texto + `
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">${nome}</li>
+            </ol>
+        </nav>
+    `;
+    divTela.innerHTML = texto;
+
+    let xhr = new XMLHttpRequest();
+    xhr.onload = exibeNoticias;
+    xhr.open('GET', `http://newsapi.org/v2/everything?domains=${fonte}&apiKey=${API_KEY}`)
+    xhr.send();
+}

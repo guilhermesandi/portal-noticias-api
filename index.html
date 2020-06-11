@@ -20,8 +20,10 @@
             <nav class="navbar navbar-light">
                 <a href="#" id="logo" class="navbar-brand"><img src="img/logo.png" alt=""></a>
                 <form class="form-inline">
-                    <input id="txtPesquisa" class="form-control mr-sm-2" type="search" placeholder="Pesquisar..." aria-label="Search">
-                    <button id="btnPesquisa" class="btn btn-warning my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                    <input id="txtPesquisa" class="form-control mr-sm-2" type="search" placeholder="Pesquisar..."
+                        aria-label="Search">
+                    <button id="btnPesquisa" class="btn btn-warning my-2 my-sm-0" type="submit"><i
+                            class="fas fa-search"></i></button>
                 </form>
             </nav>
         </header>
@@ -31,17 +33,45 @@
     <main class="container main">
         <section class="row">
             <div id="tela" class="card col-8">
-                
+                <div id="tela-titulo">
+                    <!--<nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Library</li>
+                        </ol>
+                    </nav>-->
+                </div>
+                <div id="tela-noticia">
+                    <!--<div class="box-noticia row no-gutters">
+                        <div class="col-md-4">
+                            <img src="https://picsum.photos/200" class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title"><a href="${noticia.url}" target="_blank">Título</a></h5>
+                                <p class="card-text"><small class="text-muted">01/01/20 - Fonte</small></p>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis
+                                    illo doloremque quia placeat aperiam, architecto qui quasi praesentium fuga
+                                    repudiandae.</p>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
             </div>
+
             <div class="card secoes col-4">
                 <div class="card-header">
                     Mais lidas
                 </div>
                 <ul class="list-group list-group-flush">
-                    <button type="button" class="btn btn-secondary">Seção 1</button>
-                    <button type="button" class="btn btn-secondary">Seção 2</button>
-                    <button type="button" class="btn btn-secondary">Seção 3</button>
-                    <button type="button" class="btn btn-secondary">Seção 4</button>
+                    <button type="button" value="voxel.com.br" class="btn btn-secondary"
+                        onclick="carregaFonte(this);">Voxel</button>
+                    <button type="button" value="tecmundo.com.br" class="btn btn-secondary"
+                        onclick="carregaFonte(this);">Tecmundo</button>
+                    <button type="button" value="uol.com.br" class="btn btn-secondary"
+                        onclick="carregaFonte(this);">UOL</button>
+                    <button type="button" value="globo.com" class="btn btn-secondary"
+                        onclick="carregaFonte(this);">Globo</button>
                 </ul>
             </div>
         </section>

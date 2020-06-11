@@ -77,6 +77,10 @@ header {
     border-bottom-left-radius: .25rem;
     border-bottom-right-radius: .25rem;
 }
+
+.secoes {
+    padding-bottom: 15px;
+}
 /* Fim Main */
 
 /* Footer */
