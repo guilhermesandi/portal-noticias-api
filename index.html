@@ -18,11 +18,10 @@
     <header class="header">
         <header class="container header">
             <nav class="navbar navbar-light">
-                <a class="navbar-brand"><img src="img/logo.png" alt=""></a>
+                <a href="#" class="navbar-brand"><img src="img/logo.png" alt=""></a>
                 <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar..." aria-label="Search">
-                    <button class="btn btn-warning my-2 my-sm-0" type="submit"><i
-                            class="fas fa-search"></i></button>
+                    <input id="txtPesquisa" class="form-control mr-sm-2" type="search" placeholder="Pesquisar..." aria-label="Search">
+                    <button id="btnPesquisa" class="btn btn-warning my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
                 </form>
             </nav>
         </header>
@@ -31,8 +30,8 @@
 
     <main class="container main">
         <section class="row">
-            <div class="card col-8">
-                <div class="row no-gutters">
+            <div id="tela" class="card col-8">
+                <div class="box-noticia row no-gutters">
                     <div class="col-md-4">
                         <img src="https://picsum.photos/200" class="card-img" alt="...">
                     </div>
@@ -40,11 +39,12 @@
                         <div class="card-body">
                             <h5 class="card-title"><a href="#">Título da Notícia</a></h5>
                             <p class="card-text"><small class="text-muted">08/05/2020 - Fonte da notícia</small></p>
-                            <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit assumenda deleniti, dolores quia corrupti.</p>
+                            <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+                                fugit assumenda deleniti, dolores quia corrupti.</p>
                         </div>
                     </div>
                 </div>
-                <div class="row no-gutters">
+                <div class="box-noticia row no-gutters">
                     <div class="col-md-4">
                         <img src="https://picsum.photos/200" class="card-img" alt="...">
                     </div>
@@ -52,11 +52,12 @@
                         <div class="card-body">
                             <h5 class="card-title"><a href="#">Título da Notícia</a></h5>
                             <p class="card-text"><small class="text-muted">08/05/2020 - Fonte da notícia</small></p>
-                            <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit assumenda deleniti, dolores quia corrupti.</p>
+                            <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+                                fugit assumenda deleniti, dolores quia corrupti.</p>
                         </div>
                     </div>
                 </div>
-                <div class="row no-gutters">
+                <div class="box-noticia row no-gutters">
                     <div class="col-md-4">
                         <img src="https://picsum.photos/200" class="card-img" alt="...">
                     </div>
@@ -64,7 +65,8 @@
                         <div class="card-body">
                             <h5 class="card-title"><a href="#">Título da Notícia</a></h5>
                             <p class="card-text"><small class="text-muted">08/05/2020 - Fonte da notícia</small></p>
-                            <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores fugit assumenda deleniti, dolores quia corrupti.</p>
+                            <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+                                fugit assumenda deleniti, dolores quia corrupti.</p>
                         </div>
                     </div>
                 </div>
@@ -89,29 +91,28 @@
             <section class="row">
                 <div class="sobre col-4">
                     <h3>Sobre</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga perspiciatis dolores nostrum
-                        tempora modi odio aliquam. Voluptas dicta ipsa vero, aspernatur ullam tempora, animi possimus
-                        vel qui amet saepe nam?</p>
+                    <p>Esse projeto foi desenvolvido para praticar o uso de APIs. News API está sendo utilizado para
+                        coletar informações de notícias.</p>
                 </div>
                 <div class="contato col-4">
                     <h3>Contato</h3>
-                    <li>Lorem ipsum dolor sit.</li>
-                    <li>Lorem ipsum dolor sit.</li>
-                    <li>Lorem ipsum dolor sit.</li>
+                    <li>- +55 99 9 9999 9999</li>
+                    <li>- contato@email.com</li>
+                    <li>- Rua Projeto - Bairro Projeto</li>
                 </div>
                 <div class="redes-sociais col-4">
                     <h3>Redes Sociais</h3>
-                    <a href="https://www.youtube.com" target="_blank" class="fa-stack fa-1x">
+                    <a href="https://github.com/guilhermesandi" target="_blank" class="fa-stack fa-1x">
                         <i class="fa fa-circle-thin fa-stack-2x"></i>
-                        <i class="fab fa-youtube fa-stack-1x"></i>
+                        <i class="fab fa-github fa-stack-1x"></i>
                     </a>
-                    <a href="https://www.youtube.com" target="_blank" class="fa-stack fa-1x">
+                    <a href="https://www.linkedin.com/in/guilhermesandi/" target="_blank" class="fa-stack fa-1x">
                         <i class="fa fa-circle-thin fa-stack-2x"></i>
-                        <i class="fab fa-youtube fa-stack-1x"></i>
+                        <i class="fab fa-linkedin-in fa-stack-1x"></i>
                     </a>
-                    <a href="https://www.youtube.com" target="_blank" class="fa-stack fa-1x">
+                    <a href="https://instagram.com" target="_blank" class="fa-stack fa-1x">
                         <i class="fa fa-circle-thin fa-stack-2x"></i>
-                        <i class="fab fa-youtube fa-stack-1x"></i>
+                        <i class="fab fa-instagram fa-stack-1x"></i>
                     </a>
                 </div>
 
