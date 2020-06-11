@@ -17,7 +17,7 @@ function exibeNoticias() {
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title"><a href="${noticia.url}">${noticia.title}</a></h5>
+                        <h5 class="card-title"><a href="${noticia.url}" target="_blank">${noticia.title}</a></h5>
                         <p class="card-text"><small class="text-muted">${data.toLocaleDateString()} - ${noticia.source.name}</small></p>
                         <p class="card-text">${noticia.content}</p>
                     </div>
@@ -41,9 +41,13 @@ function executaPesquisa() {
 
 document.getElementById('btnPesquisa').addEventListener('click', executaPesquisa);
 
-function carregaPagina() {
+function carregaMain() {
     let xhr = new XMLHttpRequest();
     xhr.onload = exibeNoticias;
-    xhr.open('GET', `https://newsapi.org/v2/everything?q=tecnologia&apiKey=${API_KEY}`);
+    xhr.open('GET', `http://newsapi.org/v2/top-headlines?country=br&category=business&apiKey=${API_KEY}`);
     xhr.send();
 }
+
+document.getElementById('logo').addEventListener('click', carregaMain);
+
+onload = carregaMain();
