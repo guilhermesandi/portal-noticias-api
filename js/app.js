@@ -61,7 +61,7 @@ function carregaFonte(botao) {
     texto = texto + `
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a>Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">${nome}</li>
             </ol>
         </nav>
@@ -79,3 +79,5 @@ document.getElementById('btnPesquisa').addEventListener('click', executaPesquisa
 document.getElementById('logo').addEventListener('click', carregaMain);
 
 onload = carregaMain();
+
+document.getElementById('btnPesquisa').addEventListener('click', executaPesquisa);
