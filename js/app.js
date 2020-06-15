@@ -39,8 +39,6 @@ function executaPesquisa() {
     xhr.send();
 }
 
-document.getElementById('btnPesquisa').addEventListener('click', executaPesquisa);
-
 function carregaMain() {
     let divTela = document.getElementById('tela-titulo');
     let texto = '';
@@ -51,10 +49,6 @@ function carregaMain() {
     xhr.open('GET', `http://newsapi.org/v2/top-headlines?country=br&apiKey=${API_KEY}`);
     xhr.send();
 }
-
-document.getElementById('logo').addEventListener('click', carregaMain);
-
-onload = carregaMain();
 
 function carregaFonte(botao) {
     let fonte = botao.value;
@@ -79,3 +73,9 @@ function carregaFonte(botao) {
     xhr.open('GET', `http://newsapi.org/v2/everything?domains=${fonte}&apiKey=${API_KEY}`)
     xhr.send();
 }
+
+document.getElementById('btnPesquisa').addEventListener('click', executaPesquisa);
+
+document.getElementById('logo').addEventListener('click', carregaMain);
+
+onload = carregaMain();
