@@ -38,11 +38,47 @@ function executaPesquisa() {
 
     // Montar título HTML da fonte
     texto = texto + `
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Pesquisa: ${query}</li>
-            </ol>
+        <nav class="navbar navbar-light bg-light">
+            <a class="titulo-nav navbar-brand">Pesquisa: <strong>${query}</strong></a>
+            
+            <button type="button" class="btn-salvar btn btn-warning btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Salvar
+            </button>
+
+            
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Pesquisas Salvas</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Título do
+                                        menu</span>
+                                </div>
+                                <input type="text" class="form-control hsimp-level">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Texto de Pesquisa</span>
+                                </div>
+                                <input type="text" class="form-control hsimp-level">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-primary">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </nav>
     `;
     divTela.innerHTML = texto;
@@ -73,11 +109,47 @@ function carregaFonte(botao) {
 
     // Montar título HTML da fonte
     texto = texto + `
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">${nome}</li>
-            </ol>
+        <nav class="navbar navbar-light bg-light">
+            <a class="titulo-nav navbar-brand"><strong>${nome}</strong></a>
+            
+            <button type="button" class="btn-salvar btn btn-warning btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Salvar
+            </button>
+
+            
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Pesquisas Salvas</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Título do
+                                        menu</span>
+                                </div>
+                                <input type="text" class="form-control hsimp-level">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Texto de Pesquisa</span>
+                                </div>
+                                <input type="text" class="form-control hsimp-level">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-primary">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </nav>
     `;
     divTela.innerHTML = texto;
@@ -92,4 +164,4 @@ document.getElementById('btnPesquisa').addEventListener('click', executaPesquisa
 
 document.getElementById('logo').addEventListener('click', carregaMain);
 
-//onload = carregaMain();
+onload = carregaMain();
