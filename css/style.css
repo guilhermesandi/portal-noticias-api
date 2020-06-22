@@ -77,6 +77,10 @@ header {
     font-weight: bold;
 }
 
+.pesquisas-salvas {
+    padding-bottom: 15px;
+}
+
 .card-header {
     border-radius: 0px !important;
     border-top-left-radius: .25rem !important;

@@ -33,6 +33,20 @@ function exibeNoticias() {
 function executaPesquisa() {
     let query = document.getElementById('txtPesquisa').value;
 
+    let divTela = document.getElementById('tela-titulo');
+    let texto = '';
+
+    // Montar título HTML da fonte
+    texto = texto + `
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Pesquisa: ${query}</li>
+            </ol>
+        </nav>
+    `;
+    divTela.innerHTML = texto;
+
     let xhr = new XMLHttpRequest();
     xhr.onload = exibeNoticias;
     xhr.open('GET', `https://newsapi.org/v2/everything?q=${query}&apiKey=${API_KEY}`);
@@ -61,7 +75,7 @@ function carregaFonte(botao) {
     texto = texto + `
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a>Home</a></li>
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">${nome}</li>
             </ol>
         </nav>
