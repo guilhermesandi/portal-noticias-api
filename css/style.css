@@ -63,6 +63,25 @@ header {
     border: none;
 }
 
+#tela-titulo {
+    margin-bottom: 15px;
+}
+
+.bg-light {
+    background-color: #121212 !important;
+    border-radius: 0.25rem;
+}
+
+.titulo-nav {
+    color: #FFFFFF !important;
+    padding: 0px 10px;
+}
+
+.btn-salvar {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
 .no-gutters {
     margin-bottom: 15px;
 }
