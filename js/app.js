@@ -79,5 +79,3 @@ document.getElementById('btnPesquisa').addEventListener('click', executaPesquisa
 document.getElementById('logo').addEventListener('click', carregaMain);
 
 onload = carregaMain();
-
-document.getElementById('btnPesquisa').addEventListener('click', executaPesquisa);
