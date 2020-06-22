@@ -70,6 +70,8 @@ header {
 .bg-light {
     background-color: #121212 !important;
     border-radius: 0.25rem;
+    border-bottom-right-radius: 0.35rem;
+    border-top-right-radius: 0.35rem;
 }
 
 .titulo-nav {
@@ -80,6 +82,10 @@ header {
 .btn-salvar {
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    font-weight: bold;
+    background-color: #FFC107;
 }
 
 .no-gutters {
