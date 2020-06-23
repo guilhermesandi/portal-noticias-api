@@ -88,6 +88,31 @@ header {
     background-color: #FFC107;
 }
 
+/* Modal */
+.modal-header {
+    background-color: #121212;
+    color: #FFFFFF;
+}
+
+.close {
+    color: #FFFFFF;
+    text-shadow: 0 1px 0 #121212;
+}
+
+
+
+
+.modal-footer {
+    background-color: #121212;
+    color: #FFFFFF;
+}
+
+.modal-footer {
+    background-color: #121212;
+    color: #FFFFFF;
+}
+/* Fim Modal */
+
 .no-gutters {
     margin-bottom: 15px;
 }

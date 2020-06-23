@@ -145,7 +145,7 @@ function carregaFonte(botao) {
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary">Salvar</button>
+                            <button type="button" class="btn btn-warning">Salvar</button>
                         </div>
                     </div>
                 </div>
