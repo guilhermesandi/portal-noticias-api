@@ -62,19 +62,19 @@ function executaPesquisa() {
                                     <span class="input-group-text" id="inputGroup-sizing-default">Título do
                                         menu</span>
                                 </div>
-                                <input type="text" class="form-control hsimp-level">
+                                <input id="txtTitulo" type="text" class="form-control hsimp-level">
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-default">Texto de Pesquisa</span>
                                 </div>
-                                <input type="text" class="form-control hsimp-level">
+                                <input id="txtDescricao" type="text" class="form-control hsimp-level">
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary">Salvar</button>
+                            <button id="btnSalvar" type="button" class="btn btn-primary" data-dismiss="modal" onclick="salvarPesquisa()">Salvar</button>
                         </div>
                     </div>
                 </div>
@@ -165,3 +165,45 @@ document.getElementById('btnPesquisa').addEventListener('click', executaPesquisa
 document.getElementById('logo').addEventListener('click', carregaMain);
 
 onload = carregaMain();
+
+
+
+
+// Local Storage
+//function salvarPesquisa() {
+let salvarPesquisa = function () {
+    let titulo = document.getElementById('txtTitulo').value;
+    let descricao = document.getElementById('txtDescricao').value;
+    let pesquisa = document.getElementById('txtPesquisa').value;
+    localStorage.setItem('txtTitulo', titulo);
+    localStorage.setItem('txtDescricao', descricao);
+    localStorage.setItem('txtPesquisa', pesquisa);
+};
+
+//document.getElementById('btnSalvar').addEventListener('click', salvarPesquisa);
+//document.onchange = salvarPesquisa;
+
+
+
+
+
+/*if (localStorage.estado) {
+    document.getElementById('estado').value = localStorage.estado;
+}
+if (localStorage.dataInicio) {
+    document.getElementById('dataInicio').value = localStorage.dataInicio;
+}
+if (localStorage.dataFinal) {
+    document.getElementById('dataFinal').value = localStorage.dataFinal;
+}
+
+var salvarData = function () {
+    var estado = document.getElementById('estado').value;
+    var dataInicio = document.getElementById('dataInicio').value;
+    var dataFinal = document.getElementById('dataFinal').value;
+    localStorage.setItem('estado', estado);
+    localStorage.setItem('dataInicio', dataInicio);
+    localStorage.setItem('dataFinal', dataFinal);
+};
+
+document.onchange = salvarData;*/
