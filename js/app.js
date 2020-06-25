@@ -170,40 +170,42 @@ onload = carregaMain();
 
 
 // Local Storage
-//function salvarPesquisa() {
-let salvarPesquisa = function () {
+function salvarPesquisa() {
+    let salvas = [];
+    let id, titulo, descricao, pesquisa;
+
+    if (localStorage.length === 0) {
+        titulo = document.getElementById('txtTitulo').value;
+        descricao = document.getElementById('txtDescricao').value;
+        pesquisa = document.getElementById('txtPesquisa').value;
+
+        localStorage.setItem('pesquisasSalvas', JSON.stringify({ pesquisasSalvas: [{ titulo, descricao, pesquisa }] }));
+    } else {
+        titulo = document.getElementById('txtTitulo').value;
+        descricao = document.getElementById('txtDescricao').value;
+        pesquisa = document.getElementById('txtPesquisa').value;
+
+        salvas = JSON.parse(localStorage.getItem('pesquisasSalvas')) || [];
+
+        salvas.pesquisasSalvas.push({ titulo, descricao, pesquisa });
+        console.log(salvas);
+
+        localStorage.setItem('pesquisasSalvas', JSON.stringify(salvas));
+    }
+};
+
+/*function salvarPesquisa() {
+    let id = localStorage.length;
     let titulo = document.getElementById('txtTitulo').value;
     let descricao = document.getElementById('txtDescricao').value;
     let pesquisa = document.getElementById('txtPesquisa').value;
-    localStorage.setItem('txtTitulo', titulo);
-    localStorage.setItem('txtDescricao', descricao);
-    localStorage.setItem('txtPesquisa', pesquisa);
-};
 
-//document.getElementById('btnSalvar').addEventListener('click', salvarPesquisa);
-//document.onchange = salvarPesquisa;
+    localStorage.setItem('pesquisasSalvas', JSON.stringify({ pesquisasSalvas: [{ id, titulo, descricao, pesquisa }] }));
+    //localStorage.setItem('pesquisasSalvas', JSON.stringify({ pesquisasSalvas: [{ id, titulo, descricao, pesquisa }, { id: 1, titulo: "teste", descricao: "testando", pesquisa: "TESTE" }] }));
+
+    let salvas = JSON.parse(localStorage.getItem('pesquisasSalvas'));
 
 
-
-
-
-/*if (localStorage.estado) {
-    document.getElementById('estado').value = localStorage.estado;
-}
-if (localStorage.dataInicio) {
-    document.getElementById('dataInicio').value = localStorage.dataInicio;
-}
-if (localStorage.dataFinal) {
-    document.getElementById('dataFinal').value = localStorage.dataFinal;
-}
-
-var salvarData = function () {
-    var estado = document.getElementById('estado').value;
-    var dataInicio = document.getElementById('dataInicio').value;
-    var dataFinal = document.getElementById('dataFinal').value;
-    localStorage.setItem('estado', estado);
-    localStorage.setItem('dataInicio', dataInicio);
-    localStorage.setItem('dataFinal', dataFinal);
-};
-
-document.onchange = salvarData;*/
+    console.log(salvas.pesquisasSalvas[0].pesquisa);
+    console.log(salvas);
+};*/
