@@ -160,6 +160,66 @@ function carregaFonte(botao) {
     xhr.send();
 }
 
+function carregaPesquisa(botao) {
+    let pesquisa = botao.value;
+    let nome = botao.innerHTML;
+
+    let divTela = document.getElementById('tela-titulo');
+    let texto = '';
+
+    // Montar título HTML da pesquisa
+    texto = texto + `
+        <nav class="navbar navbar-light bg-light">
+            <a class="titulo-nav navbar-brand">Pesquisa salva: <strong>${nome}</strong></a>
+            
+            <button type="button" class="btn-salvar btn btn-warning btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Salvar
+            </button>
+
+            
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Pesquisas Salvas</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Título do
+                                        menu</span>
+                                </div>
+                                <input type="text" class="form-control hsimp-level">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Texto de Pesquisa</span>
+                                </div>
+                                <input type="text" class="form-control hsimp-level">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-warning">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    `;
+    divTela.innerHTML = texto;
+
+    let xhr = new XMLHttpRequest();
+    xhr.onload = exibeNoticias;
+    xhr.open('GET', `https://newsapi.org/v2/everything?q=${pesquisa}&apiKey=${API_KEY}`);
+    xhr.send();
+}
+
 let salvas = [];
 function salvarPesquisa() {
     let id, titulo, descricao, pesquisa;
@@ -203,7 +263,7 @@ function exibePesquisasSalvas() {
         texto = texto + `
             <ul class="list-group list-group-flush">
                 <button type="button" value="${pesquisa}" class="btn btn-secondary"
-                    onclick="carregaFonte(this);">${titulo}</button>
+                    onclick="carregaPesquisa(this);">${titulo}</button>
             </ul>
         `;
     };
