@@ -242,16 +242,19 @@ function salvarPesquisa() {
 function exibePesquisasSalvas() {
     let divTela = document.getElementById('pesquisas-salvas');
     let texto = '';
-    
+
     salvas = JSON.parse(localStorage.getItem('pesquisasSalvas'));
 
-    // Montar texto HTML das noticias
-    texto = texto + `
-        <div class="card-header">
-            Pesquisas Salvas
-        </div>
-        <ul class="list-group list-group-flush">
-    `;
+    if (salvas.pesquisasSalvas.length === 0) {
+        localStorage.removeItem('pesquisasSalvas');
+    } else {
+        texto = texto + `
+            <div class="card-header">
+                Pesquisas Salvas
+            </div>
+            <ul class="list-group list-group-flush">
+        `;
+    }
     for (i = 0; i < salvas.pesquisasSalvas.length; i++) {
         let titulo = salvas.pesquisasSalvas[i].titulo;
         let pesquisa = salvas.pesquisasSalvas[i].pesquisa;
@@ -260,8 +263,8 @@ function exibePesquisasSalvas() {
             <div class="btn-group" role="group" aria-label="Basic example">
                 <button type="button" value="${pesquisa}" class="btn btn-secondary"
                     onclick="carregaPesquisa(this);">${titulo}</button>
-                <button type="button" value="uol.com.br" class="btn-close btn btn-secondary btn-lg active"
-                    onclick="carregaFonte(this);"><i
+                <button type="button" value="${i}" class="btn-close btn btn-secondary btn-lg active"
+                    onclick="removePesquisaSalva(${i});"><i
                     class="fas fa-times"></i></button>
             </div>
         `;
@@ -274,10 +277,11 @@ function exibePesquisasSalvas() {
     divTela.innerHTML = texto;
 }
 
-function removePesquisaSalva() {
+function removePesquisaSalva(id) {
     salvas = JSON.parse(localStorage.getItem('pesquisasSalvas'));
-
-    
+    salvas.pesquisasSalvas.splice(id, 1);
+    localStorage.setItem('pesquisasSalvas', JSON.stringify(salvas));
+    exibePesquisasSalvas();
 }
 
 document.getElementById('btnPesquisa').addEventListener('click', executaPesquisa);
