@@ -1,2 +1,2 @@
 # portal-noticias-api
- Portal de notícias integrado com APIs, utilizando localStorage.
+ Portal de notícias integrado com APIs.
