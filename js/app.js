@@ -110,12 +110,7 @@ function carregaFonte(botao) {
     // Montar título HTML da fonte
     texto = texto + `
         <nav class="navbar navbar-light bg-light">
-            <a class="titulo-nav navbar-brand"><strong>${nome}</strong></a>
-            
-            <button type="button" class="btn-salvar btn btn-warning btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Salvar
-            </button>
-
+            <a class="titulo-nav navbar-brand">Fonte: <strong>${nome}</strong></a>
             
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -250,23 +245,25 @@ function exibePesquisasSalvas() {
     
     salvas = JSON.parse(localStorage.getItem('pesquisasSalvas'));
 
+    // Montar texto HTML das noticias
     texto = texto + `
         <div class="card-header">
             Pesquisas Salvas
         </div>
+        <ul class="list-group list-group-flush">
     `;
-    // Montar texto HTML das noticias
     for (i = 0; i < salvas.pesquisasSalvas.length; i++) {
         let titulo = salvas.pesquisasSalvas[i].titulo;
         let pesquisa = salvas.pesquisasSalvas[i].pesquisa;
 
         texto = texto + `
-            <ul class="list-group list-group-flush">
-                <button type="button" value="${pesquisa}" class="btn btn-secondary"
-                    onclick="carregaPesquisa(this);">${titulo}</button>
-            </ul>
+            <button type="button" value="${pesquisa}" class="btn btn-secondary"
+                onclick="carregaPesquisa(this);">${titulo}</button>
         `;
     };
+    texto = texto + `
+        </div>
+    `;
 
     // Preencher a DIV com o texto HTML
     divTela.innerHTML = texto;
