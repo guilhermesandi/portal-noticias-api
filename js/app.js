@@ -74,7 +74,7 @@ function executaPesquisa() {
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary"
                                 data-dismiss="modal">Cancelar</button>
-                            <button id="btnSalvar" type="button" class="btn btn-primary" data-dismiss="modal" onclick="salvarPesquisa()">Salvar</button>
+                            <button id="btnSalvar" type="button" class="btn btn-primary" data-dismiss="modal" onclick="salvarPesquisa();exibePesquisasSalvas()">Salvar</button>
                         </div>
                     </div>
                 </div>
@@ -160,18 +160,8 @@ function carregaFonte(botao) {
     xhr.send();
 }
 
-document.getElementById('btnPesquisa').addEventListener('click', executaPesquisa);
-
-document.getElementById('logo').addEventListener('click', carregaMain);
-
-onload = carregaMain();
-
-
-
-
-// Local Storage
+let salvas = [];
 function salvarPesquisa() {
-    let salvas = [];
     let id, titulo, descricao, pesquisa;
 
     if (localStorage.length === 0) {
@@ -194,18 +184,38 @@ function salvarPesquisa() {
     }
 };
 
-/*function salvarPesquisa() {
-    let id = localStorage.length;
-    let titulo = document.getElementById('txtTitulo').value;
-    let descricao = document.getElementById('txtDescricao').value;
-    let pesquisa = document.getElementById('txtPesquisa').value;
+function exibePesquisasSalvas() {
+    let divTela = document.getElementById('pesquisas-salvas');
+    let texto = '';
+    
+    salvas = JSON.parse(localStorage.getItem('pesquisasSalvas'));
 
-    localStorage.setItem('pesquisasSalvas', JSON.stringify({ pesquisasSalvas: [{ id, titulo, descricao, pesquisa }] }));
-    //localStorage.setItem('pesquisasSalvas', JSON.stringify({ pesquisasSalvas: [{ id, titulo, descricao, pesquisa }, { id: 1, titulo: "teste", descricao: "testando", pesquisa: "TESTE" }] }));
+    texto = texto + `
+        <div class="card-header">
+            Pesquisas Salvas
+        </div>
+    `;
+    // Montar texto HTML das noticias
+    for (i = 0; i < salvas.pesquisasSalvas.length; i++) {
+        let titulo = salvas.pesquisasSalvas[i].titulo;
+        let pesquisa = salvas.pesquisasSalvas[i].pesquisa;
 
-    let salvas = JSON.parse(localStorage.getItem('pesquisasSalvas'));
+        texto = texto + `
+            <ul class="list-group list-group-flush">
+                <button type="button" value="${pesquisa}" class="btn btn-secondary"
+                    onclick="carregaFonte(this);">${titulo}</button>
+            </ul>
+        `;
+    };
 
+    // Preencher a DIV com o texto HTML
+    divTela.innerHTML = texto;
+}
 
-    console.log(salvas.pesquisasSalvas[0].pesquisa);
-    console.log(salvas);
-};*/
+document.getElementById('btnPesquisa').addEventListener('click', executaPesquisa);
+
+document.getElementById('logo').addEventListener('click', carregaMain);
+
+onload = carregaMain();
+
+onload = exibePesquisasSalvas();
