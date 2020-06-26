@@ -131,6 +131,23 @@ header {
     padding-bottom: 15px;
 }
 
+#pesquisas-salvas .list-group .btn {
+    width: 100%;
+}
+
+#pesquisas-salvas .list-group .btn-close {
+    padding: 0px 25px;
+    padding-left: 13px;
+    border-radius: 0px;
+    width: 10px;
+    border: none;
+}
+
+#pesquisas-salvas .list-group .btn-group:last-child {
+    border-bottom-left-radius: 50px !important;
+    border-bottom-right-radius: .25rem !important;
+}
+
 .card-header {
     border-radius: 0px !important;
     border-top-left-radius: .25rem !important;

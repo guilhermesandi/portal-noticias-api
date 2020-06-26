@@ -257,16 +257,27 @@ function exibePesquisasSalvas() {
         let pesquisa = salvas.pesquisasSalvas[i].pesquisa;
 
         texto = texto + `
-            <button type="button" value="${pesquisa}" class="btn btn-secondary"
-                onclick="carregaPesquisa(this);">${titulo}</button>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" value="${pesquisa}" class="btn btn-secondary"
+                    onclick="carregaPesquisa(this);">${titulo}</button>
+                <button type="button" value="uol.com.br" class="btn-close btn btn-secondary btn-lg active"
+                    onclick="carregaFonte(this);"><i
+                    class="fas fa-times"></i></button>
+            </div>
         `;
     };
     texto = texto + `
-        </div>
+        </ul>
     `;
 
     // Preencher a DIV com o texto HTML
     divTela.innerHTML = texto;
+}
+
+function removePesquisaSalva() {
+    salvas = JSON.parse(localStorage.getItem('pesquisasSalvas'));
+
+    
 }
 
 document.getElementById('btnPesquisa').addEventListener('click', executaPesquisa);
